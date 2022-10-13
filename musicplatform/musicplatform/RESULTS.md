@@ -82,9 +82,8 @@ Output : 2
 ### in 2 different ways, for each artist, list down all of his/her albums
 
 Q1) 
-- album = Album.objects.select_related('Artist')
 - dic = dict()
-- for albums in album:
+- for albums in Album.objects.select_related('Artist'):
 -     dic.setdefault(albums.Artist.stageName,[]).append(albums.name) 
 - print(dic)
 
@@ -93,9 +92,8 @@ Output 1: {'dua': ['New Rules', 'Deezer']}
 
 
 Q2) 
-- artists = Artist.objects.all()
 - dic = dict()
-- for artist in artists:
+- for artist in Artist.objects.all():
 -       dic[artist.stageName] = artist.album_set.all()
 - print(dic)
 
